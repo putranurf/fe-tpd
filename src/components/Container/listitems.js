@@ -4,14 +4,23 @@ import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
 import ListSubheader from "@material-ui/core/ListSubheader";
 import DashboardIcon from "@material-ui/icons/Dashboard";
-import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import PeopleIcon from "@material-ui/icons/People";
-import BarChartIcon from "@material-ui/icons/BarChart";
-import LayersIcon from "@material-ui/icons/Layers";
+import PlaylistAddIcon from "@material-ui/icons/PlaylistAdd";
+import DesktopWindowsIcon from "@material-ui/icons/DesktopWindows";
+import ListIcon from "@material-ui/icons/List";
+import PageviewIcon from "@material-ui/icons/Pageview";
+import DvrIcon from "@material-ui/icons/Dvr";
 import AssignmentIcon from "@material-ui/icons/Assignment";
+import Divider from "@material-ui/core/Divider";
 
 export const mainListItems = (
   <div>
+     <ListItem>
+      <ListItemText primary="Ini Logo Aplikasi" />
+    </ListItem>
+    <Divider />
+    <Divider />
+    <Divider />
     <ListItem button>
       <ListItemIcon>
         <DashboardIcon />
@@ -20,27 +29,39 @@ export const mainListItems = (
     </ListItem>
     <ListItem button>
       <ListItemIcon>
-        <ShoppingCartIcon />
-      </ListItemIcon>
-      <ListItemText primary="Orders" />
-    </ListItem>
-    <ListItem button>
-      <ListItemIcon>
         <PeopleIcon />
       </ListItemIcon>
-      <ListItemText primary="Customers" />
+      <ListItemText primary="Data Pelamar" />
     </ListItem>
     <ListItem button>
       <ListItemIcon>
-        <BarChartIcon />
+        <PlaylistAddIcon />
       </ListItemIcon>
-      <ListItemText primary="Reports" />
+      <ListItemText primary="Input Sesi Tes" />
     </ListItem>
     <ListItem button>
       <ListItemIcon>
-        <LayersIcon />
+        <DesktopWindowsIcon />
       </ListItemIcon>
-      <ListItemText primary="Integrations" />
+      <ListItemText primary="Soal" />
+    </ListItem>
+    <ListItem button>
+      <ListItemIcon>
+        <ListIcon />
+      </ListItemIcon>
+      <ListItemText primary="Daftar Tes" />
+    </ListItem>
+    <ListItem button>
+      <ListItemIcon>
+        <PageviewIcon />
+      </ListItemIcon>
+      <ListItemText primary="Hasil Tes" />
+    </ListItem>
+    <ListItem button>
+      <ListItemIcon>
+        <DvrIcon />
+      </ListItemIcon>
+      <ListItemText primary="Monitoring Progres Ujian" />
     </ListItem>
   </div>
 );

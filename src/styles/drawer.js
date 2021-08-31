@@ -2,7 +2,7 @@
 import List from "@material-ui/core/List";
 import Divider from "@material-ui/core/Divider";
 import GlobalStyles from "../styles/useStyles";
-import { mainListItems } from "../pages/Home/components/Dashboard/listitems";
+import { mainListItems } from "../components/Container/listitems";
 
 
 function global() {
