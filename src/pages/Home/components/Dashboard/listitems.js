@@ -9,9 +9,16 @@ import PeopleIcon from "@material-ui/icons/People";
 import BarChartIcon from "@material-ui/icons/BarChart";
 import LayersIcon from "@material-ui/icons/Layers";
 import AssignmentIcon from "@material-ui/icons/Assignment";
+import Divider from "@material-ui/core/Divider";
 
 export const mainListItems = (
   <div>
+     <ListItem>
+      <ListItemText primary="Ini Logo Aplikasi" />
+    </ListItem>
+    <Divider />
+    <Divider />
+    <Divider />
     <ListItem button>
       <ListItemIcon>
         <DashboardIcon />

@@ -1,52 +1,66 @@
 import React from "react";
-import clsx from "clsx";
-import { makeStyles } from "@material-ui/core/styles";
 import Drawer from "@material-ui/core/Drawer";
-import List from "@material-ui/core/List";
-import Divider from "@material-ui/core/Divider";
-import IconButton from "@material-ui/core/IconButton";
-import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
-import { mainListItems, secondaryListItems } from "../listitems";
 import GlobalStyles from "../../../styles/useStyles";
+import DrawerList from "../../../styles/drawer";
+import { useTheme } from "@material-ui/core/styles";
+import Hidden from "@material-ui/core/Hidden";
+import PropTypes from 'prop-types';
 
-// const drawerWidth = 240;
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    display: "flex",
-  },
-}));
-
-function DrawerContainer() {
-  const classes = useStyles();
+function DrawerContainer(props) {
+   const { window } = props;
   const globalClasses = GlobalStyles();
-  const [open, setOpen] = React.useState(true);
-  const handleDrawerClose = () => {
-    setOpen(false);
+  const theme = useTheme();
+  const [mobileOpen, setMobileOpen] = React.useState(false);
+
+  const handleDrawerToggle = () => {
+    setMobileOpen(!mobileOpen);
   };
-  console.log(open);
+
+  const container = window !== undefined ? () => window().document.body : undefined;
 
   return (
-    <Drawer
-      variant="permanent"
-      classes={{
-        paper: clsx(
-          globalClasses.drawerPaper,
-          !open && globalClasses.drawerPaperClose
-        ),
-      }}
-      open={open}
-    >
-      <div className={globalClasses.toolbarIcon}>
-        <IconButton onClick={handleDrawerClose}>
-          <ChevronLeftIcon />
-        </IconButton>
-      </div>
-      <Divider />
-      <List>{mainListItems}</List>
-      <Divider />
-      <List>{secondaryListItems}</List>
-    </Drawer>
+    <nav className={globalClasses.drawer} aria-label="mailbox folders">
+      <Hidden smUp implementation="css">
+        <Drawer
+          container={container}
+          variant="temporary"
+          anchor={theme.direction === "rtl" ? "right" : "left"}
+          open={mobileOpen}
+          onClose={handleDrawerToggle}
+          classes={{
+            paper: globalClasses.drawerPaper,
+          }}
+          ModalProps={{
+            keepMounted: true, // Better open performance on mobile.
+          }}
+        >
+          {DrawerList}
+        </Drawer>
+      </Hidden>
+      <Hidden xsDown implementation="css">
+        <Drawer
+          classes={{
+            paper: globalClasses.drawerPaper,
+          }}
+          variant="permanent"
+          open
+        >
+          {DrawerList}
+        </Drawer>
+      </Hidden>
+    </nav>
   );
 }
+
+
+DrawerContainer.propTypes = {
+  /**
+   * Injected by the documentation to work in an iframe.
+   * You won't need it on your project.
+   */
+  window: PropTypes.func,
+};
+
+
 export default DrawerContainer;

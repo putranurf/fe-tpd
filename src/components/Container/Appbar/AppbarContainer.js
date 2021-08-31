@@ -1,57 +1,48 @@
 import React from "react";
-import clsx from "clsx";
-import { makeStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import IconButton from "@material-ui/core/IconButton";
-import Badge from "@material-ui/core/Badge";
 import MenuIcon from "@material-ui/icons/Menu";
-import NotificationsIcon from "@material-ui/icons/Notifications";
 import GlobalStyles from "../../../styles/useStyles";
+import UserIcon from '@material-ui/icons/AccountCircle';
+import { useTheme } from "@material-ui/core/styles";
 
-// const drawerWidth = 240;
-
-const useStyles = makeStyles((theme) => ({
-  root: {
-    display: "flex",
-  },
-}));
 
 function AppbarContainer() {
-  // const classes = useStyles();
-  const globalClasses = GlobalStyles();
-  console.log(useStyles);
-  const [open, setOpen] = React.useState(true);
-  const handleDrawerOpen = () => {
-    setOpen(true);
+  const globalClasses = GlobalStyles();  const theme = useTheme();
+  const [mobileOpen, setMobileOpen] = React.useState(false);
+
+  const handleDrawerToggle = () => {
+    setMobileOpen(!mobileOpen);
   };
-  console.log(open);
 
   return (
-    <AppBar
-    position="fixed"
-    className={clsx(globalClasses.appBar, {
-      [globalClasses.appBarShift]: open,
-    })}
-  >
-    <Toolbar>
-      <IconButton
-        color="inherit"
-        aria-label="open drawer"
-        onClick={handleDrawerOpen}
-        edge="start"
-        className={clsx(globalClasses.menuButton, {
-          [globalClasses.hide]: open,
-        })}
-      >
-        <MenuIcon />
-      </IconButton>
-      <Typography variant="h6" noWrap>
-        Mini variant drawer
-      </Typography>
-    </Toolbar>
-  </AppBar>
+    <AppBar position="fixed" className={globalClasses.appBar}>
+      <Toolbar>
+        <IconButton
+          color="inherit"
+          aria-label="open drawer"
+          edge="start"
+          onClick={handleDrawerToggle}
+          className={globalClasses.menuButton}
+        >
+          <MenuIcon />
+        </IconButton>
+        <Typography
+          component="h1"
+          variant="h6"
+          color="inherit"
+          noWrap
+          className={globalClasses.title}
+        >
+          Responsive drawer
+        </Typography>
+        <IconButton color="inherit">
+          <UserIcon />
+        </IconButton>
+      </Toolbar>
+    </AppBar>
   );
 }
 export default AppbarContainer;
