@@ -7,8 +7,8 @@ import SLUGS from "../utils/slugs";
 // const ProdukComponent = lazy(() => import('../pages/Produk'));
 // const PesananComponent = lazy(() => import('../pages/Pesanan'));
 
-import Auth from "../pages/Home/components/Authentication/auth";
-import Dashboard from "../pages/Home/components/Dashboard/dashboard";
+import Auth from "../pages/Authentication/auth";
+import Dashboard from "../pages/Home/Dashboard/dashboard";
 
 function PublicRoute() {
   return (
