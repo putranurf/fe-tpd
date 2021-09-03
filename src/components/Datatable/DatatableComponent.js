@@ -1,10 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import faker from "faker";
-// import Button from "../shared/Button";
-import Button from "styled-components";
-// import DataTable from "../../src/index";
-import DataTable from "react-data-table-component";
+import Button from "../shared/Button";
+import DataTable from "../../src/index";
 
 const createUser = () => ({
   id: faker.datatype.uuid(),
@@ -83,7 +81,7 @@ const columns = [
   },
 ];
 
-function Filtering() {
+export const Filtering = () => {
   const [filterText, setFilterText] = React.useState("");
   const [resetPaginationToggle, setResetPaginationToggle] =
     React.useState(false);
@@ -124,8 +122,7 @@ function Filtering() {
   );
 };
 
-export default Filtering
-// {
-//   title: "Examples/Filtering",
-//   component: Filtering,
-// };
+export default {
+  title: "Examples/Filtering",
+  component: Filtering,
+};

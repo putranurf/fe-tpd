@@ -4,9 +4,9 @@ import AppBar from '@material-ui/core/AppBar';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Typography from '@material-ui/core/Typography';
 import { useTheme } from '@material-ui/core/styles';
-import GlobalStyles from "../../../../styles/useStyles";
-import AppbarContainer from '../../../../components/Container/Appbar/AppbarContainer';
-import DrawerContainer from '../../../../components/Container/Drawer/DrawerContainer';
+import GlobalStyles from "../../../styles/useStyles";
+import AppbarContainer from '../../../components/Container/Appbar/AppbarContainer';
+import DrawerContainer from '../../../components/Container/Drawer/DrawerContainer';
 
 const drawerWidth = 240;
 

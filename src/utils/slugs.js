@@ -9,7 +9,7 @@ export default {
  
      //Auth    
      login: '/login',
-     signup: '/signup',
-     forgotPassword: '/forgot_password'
+    //  signup: '/signup',
+    //  forgotPassword: '/forgot_password'
  };
  

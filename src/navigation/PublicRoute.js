@@ -9,6 +9,7 @@ import SLUGS from "../utils/slugs";
 
 import Auth from "../pages/Authentication/auth";
 import Dashboard from "../pages/Home/Dashboard/dashboard";
+import Pelamar from "../pages/Pelamar/pelamar";
 
 function PublicRoute() {
   return (
@@ -16,6 +17,7 @@ function PublicRoute() {
       <Switch>
         <Route path={SLUGS.login} component={Auth} />
         <Route path={SLUGS.dashboard} component={Dashboard} />
+        <Route path={SLUGS.pelamar} component={Pelamar} />
       </Switch>
     </Router>
   );
